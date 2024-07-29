@@ -10,7 +10,7 @@ export const lightTheme = {
     btnPrimaryBorder: '#ffffff',
     btnHoverBackground: '#ffffff',
     btnHoverText: '#32cd32',
-    btnHoverBorder: '#32cd32',
+    btnHoverBorder: '#ffffff',
     btnDisabledBackground: '#d9d9d9',
     btnDisabledText: '#ffffff',
     toggleBorder: '#b0b0b0',
