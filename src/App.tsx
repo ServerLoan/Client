@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './styles/GlobalStyles';
+import { lightTheme, darkTheme, ThemeType } from './styles/theme';
+import { Splash } from './ui/Splash';
 
 const App: React.FC = () => {
-  return (
-    <div className="app">
-      <h1>Hello, React 18!</h1>
-      <p>This is a basic React TypeScript example with React 18.</p>
-    </div>
-  )
-}
+  const [theme, setTheme] = useState<ThemeType>(lightTheme);
 
-export default App
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Routes>
+        <Route path="/" element={<Splash />} />
+      </Routes>
+    </ThemeProvider>
+  );
+};
+
+export default App;
