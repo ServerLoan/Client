@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
-import { lightTheme, darkTheme, ThemeType } from './styles/theme';
+import { lightTheme } from './styles/theme';
 import { Splash } from './ui/Splash';
+import { RecoilProvider } from './services/recoilProvider';
 
-const App: React.FC = () => {
-  const [theme, setTheme] = useState<ThemeType>(lightTheme);
-
-  const toggleTheme = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
-  };
-
+function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Routes>
-        <Route path="/" element={<Splash />} />
-      </Routes>
-    </ThemeProvider>
+    <RecoilProvider>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
+        <Routes>
+          <Route path="/" element={<Splash />} />
+        </Routes>
+      </ThemeProvider>
+    </RecoilProvider>
   );
-};
+}
 
 export default App;
