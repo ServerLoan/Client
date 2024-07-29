@@ -1,8 +1,16 @@
 import styled from 'styled-components';
+import LogoSvg from '../../assets/svg/logo.svg';
 
-export const HeaderLayout = styled.header``;
+export const HeaderLayout = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem 20rem;
+  background-color: ${({ theme }) => theme.colors.navbarBackground};
+`;
 
-export const Logo = styled.img`
+export const Logo = styled(LogoSvg)`
   width: 20rem;
 `;
 
@@ -23,4 +31,5 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.colors.btnHoverText};
   }
   font-size: 1.5rem;
+  font-weight: 700;
 `;
