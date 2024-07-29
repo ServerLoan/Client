@@ -20,6 +20,7 @@ declare module 'styled-components' {
       toggleSwitch: string;
       toggleEnabledBackground: string;
       toggleDisabledBackground: string;
+      highlightText: string;
       inputBackground: string;
       inputText: string;
       inputBorder: string;
