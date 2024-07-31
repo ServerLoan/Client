@@ -19,7 +19,10 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'react', 'prettier'], // prettier
-  rules: {},
+  rules: {
+    '@typescript-eslint/no-var-requires': 'off',
+    'react/react-in-jsx-scope': 'off',
+  },
   settings: {
     'import/resolver': {
       typescript: {},

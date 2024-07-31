@@ -1,12 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './styles/GlobalStyles';
+import { lightTheme } from './styles/theme';
+import { Splash } from './ui/Splash';
+import { RecoilProvider } from './services/recoilProvider';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="app">
-      <h1>Hello, React 18!</h1>
-      <p>This is a basic React TypeScript example with React 18.</p>
-    </div>
-  )
+    <RecoilProvider>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
+        <Routes>
+          <Route path="/" element={<Splash />} />
+        </Routes>
+      </ThemeProvider>
+    </RecoilProvider>
+  );
 }
 
-export default App
+export default App;
